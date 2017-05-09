@@ -9,4 +9,13 @@ class DriversController < ApplicationController
     driver = Driver.find(params[:id])
     render json: driver
   end
+
+  def create
+    driver = Driver.create({
+      name: params[:name],
+      rank: params[:rank],
+      age: params[:age]
+      })
+    render json: driver
+  end
 end

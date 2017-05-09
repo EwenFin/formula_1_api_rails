@@ -9,4 +9,13 @@ class SponsorsController < ApplicationController
     sponsor = Sponsor.find(params[:id])
     render json: sponsor
   end
+
+  def create
+    sponsor = Sponsor.create({
+      name: params[:name],
+      market: params[:market],
+      logo: params[:logo]
+      })
+    render json: sponsor
+  end
 end
